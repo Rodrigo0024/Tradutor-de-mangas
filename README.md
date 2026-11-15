@@ -56,11 +56,11 @@ Como Executar o Projeto
 
 1. Clone o repositório
 
-git clone https://github.com/seu-usuario/tradutor-contextual.git
-cd tradutor-contextual
+git clone git@github.com:Rodrigo0024/Tradutor-de-mangas.git
 
 
-2. Crie um ambiente virtual e instale as dependências
+
+1. Crie um ambiente virtual e instale as dependências
 
 python -m venv venv
 # No Windows:

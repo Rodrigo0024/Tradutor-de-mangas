@@ -1,14 +1,14 @@
 Tradutor Cultural & Contextual (Mangás, HQs & Jogos Retrô)
 
-Um tradutor e localizador inteligente alimentado por IA Multimodal projetado para compreender não apenas o texto, mas todo o contexto visual e cultural de páginas de mangás, histórias em quadrinhos ocidentais e telas de jogos retrô.
+Um tradutor e localizador inteligente alimentado por IA Multimodal, projetado para compreender não apenas o texto, mas todo o contexto visual e cultural de páginas de mangás, histórias em quadrinhos ocidentais e telas de jogos retrô.
 
 O Problema vs. A Solução
 
-Tradutores tradicionais baseados apenas em OCR (reconhecimento de texto) costumam falhar em mídias visuais porque:
+Tradutores tradicionais baseados apenas em OCR (reconhecimento óptico de caracteres) costumam falhar em mídias visuais porque:
 
 Ignoram a ordem de leitura: Confundem a leitura oriental (direita para esquerda) com a ocidental.
 
-Perdem o contexto emocional: Não sabem se um personagem está gritando de raiva, sussurrando ou sendo irônico, resultando em traduções robóticas.
+Perdem o contexto emocional: Não identificam se um personagem está gritando de raiva, sussurrando ou sendo irônico, resultando em traduções robóticas.
 
 Não adaptam nuances culturais: Honoríficos japoneses, gírias de época e trocadilhos acabam sendo traduzidos ao pé da letra.
 
@@ -57,14 +57,16 @@ Como Executar o Projeto
 1. Clone o repositório
 
 git clone git@github.com:Rodrigo0024/Tradutor-de-mangas.git
+cd Tradutor-de-mangas
 
 
-
-1. Crie um ambiente virtual e instale as dependências
+2. Crie um ambiente virtual e instale as dependências
 
 python -m venv venv
+
 # No Windows:
 venv\Scripts\activate
+
 # No Linux/Mac:
 source venv/bin/activate
 
@@ -87,33 +89,33 @@ O Que Eu Aprendi Construindo Este Projeto
 
 Desenvolver este aplicativo foi uma experiência prática fundamental para consolidar conceitos essenciais de engenharia de software e integração com Inteligência Artificial:
 
-Integração com APIs Multimodais & Engenharia de Payload:
+Integração com APIs Multimodais & Engenharia de Payload
 
 Aprendi como estruturar requisições HTTP (POST) enviando simultaneamente instruções textuais e imagens codificadas em Data URL Base64 (image/png e image/jpeg).
 
 Compreendi a importância de tratar canais de transparência (RGBA para RGB) com a biblioteca Pillow antes da codificação para evitar falhas de serialização.
 
-Autenticação e Segurança de Credenciais:
+Autenticação e Segurança de Credenciais
 
 Dominei o padrão de autenticação via cabeçalhos HTTP utilizando tokens Bearer.
 
 Implementei boas práticas de segurança utilizando arquivos .env para isolar chaves sensíveis, acompanhados de .env.example e .gitignore devidamente configurados para evitar vazamento de credenciais no GitHub.
 
-Tratamento de Timeouts e Estabilidade de Rede:
+Tratamento de Timeouts e Estabilidade de Rede
 
 Lidei na prática com erros de ReadTimeout causados pelo tempo de raciocínio de modelos grandes. Aprendi a calibrar o timeout das requisições (180s) e ajustar hiperparâmetros do modelo (como o reasoning_effort) para equilibrar velocidade e qualidade de resposta.
 
-Engenharia de Prompt Orientada a Contexto:
+Engenharia de Prompt Orientada a Contexto
 
 Estruturei prompts dinâmicos que alteram o comportamento da IA conforme o tipo de mídia, forçando o modelo a analisar expressões visuais antes de gerar a tradução e formatando a saída de maneira limpa e previsível.
 
-Experiência do Usuário (UX) em Aplicações de IA:
+Experiência do Usuário (UX) em Aplicações de IA
 
 Entendi como melhorar a percepção de espera do usuário utilizando componentes de status (st.status) e atalhos de produtividade (como colar recortes direto da área de transferência) para tornar o fluxo de uso fluido no dia a dia.
 
 Estrutura de Arquivos
 
-tradutor-contextual/
+Tradutor-de-mangas/
 ├── .env.example        # Modelo de configuração das variáveis de ambiente
 ├── .gitignore          # Arquivos ignorados pelo Git (proteção de chaves e venv)
 ├── app.py              # Código principal da interface Streamlit e integração com a API
